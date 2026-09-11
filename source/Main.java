@@ -25,7 +25,7 @@ public class Main {
         System.out.println("Gerenciador de carros customizados");
     }
 
-    private static void criarCatergorias() {
+    private static void criarCategorias() {
         Categoria motores = new Categoria("Motores");
         motores.adicionarPeca(new Peca("Motor 1.0"));
         motores.adicionarPeca(new Peca("Motor 2.0"));
