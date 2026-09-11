@@ -1,8 +1,12 @@
 package source;
 
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
-    private static Scanner scnaner = new Scanner(System.in);
-    private static List<Categoria> categoria = new ArrayList<>();
+    private static Scanner scanner = new Scanner(System.in);
+    private static List<Categoria> categorias = new ArrayList<>();
     private static Carro carroAtual;
     public static void main(String[] args){
         inicializarPrograma();
@@ -11,7 +15,7 @@ public class Main {
     private static void inicializarPrograma() {
         exibirBemVindo();
 
-        criarCatergorias();
+        criarCategorias();
 
         System.out.print("Qual o nome do seu carro?");
         String nomeCarro = scanner.nextLine();
@@ -27,15 +31,17 @@ public class Main {
 
     private static void criarCategorias() {
         Categoria motores = new Categoria("Motores");
-        motores.adicionarPeca(new Peca("Motor 1.0"));
-        motores.adicionarPeca(new Peca("Motor 2.0"));
-        motores.adicionarPeca(new Peca("Motor 3.0"));
+        motores.adicionarPeca(new Peca("Motor 1.0", 5000, "Primeiro motor"));
+        motores.adicionarPeca(new Peca("Motor 2.0", 8000, "Segundo motor"));
+        motores.adicionarPeca(new Peca("Motor 3.0", 25000, "Terceiro motor"));
+        motores.adicionarPeca(new Peca("Motor 4.0", 5000, "Quarto motor"));
         categorias.add(motores);
 
         Categoria rodas = new Categoria("Rodas");
-        motores.adicionarPeca(new Peca("Roda 1.0"));
-        motores.adicionarPeca(new Peca("Roda 2.0"));
-        motores.adicionarPeca(new Peca("Roda 3.0"));
+        rodas.adicionarPeca(new Peca("Motor 1.0", 5000, "Primeiro motor"));
+        rodas.adicionarPeca(new Peca("Motor 2.0", 8000, "Segundo motor"));
+        rodas.adicionarPeca(new Peca("Motor 3.0", 25000, "Terceiro motor"));
+        rodas.adicionarPeca(new Peca("Motor 4.0", 5000, "Quarto motor"));
         categorias.add(rodas);
     }
 
@@ -52,7 +58,7 @@ public class Main {
                     carroAtual.exibirResumo();
                     break;
                 case 3:
-                    System.out.Println("\n Obrigado por usar o gerenciador de carros");
+                    System.out.println("\n Obrigado por usar o gerenciador de carros");
                     continuar = false;
                     break;
                 default:
@@ -78,7 +84,7 @@ public class Main {
     private static void customizarCarro() {
         System.out.println("Customize seu carro");
 
-        for (Categoria categoria : categoria) {
+        for (Categoria categoria : categorias) {
             escolherPecaDaCategoria(categoria);
         }
         System.out.println("\n Customização completa!");
@@ -95,7 +101,7 @@ public class Main {
                 int indice = Integer.parseInt(escolha) - 1;
 
                 if (indice >= -0 && indice < categoria.getTotalPecas()) {
-                    peca pecaSelecionada_obj = categoria.getPecaPOrIndice(indice);
+                    Peca pecaSelecionada_obj = categoria.getPecaPorIndice(indice);
                     carroAtual.adicionarPecaSelecionada(categoria.getNome(),pecaSelecionada_obj);
 
                     System.out.println(pecaSelecionada_obj.getNome() + "adicionado");

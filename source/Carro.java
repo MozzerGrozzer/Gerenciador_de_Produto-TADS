@@ -38,7 +38,7 @@ public class Carro {
             System.out.println("Nenhuma peça selecionada.");
             return;
         }
-        for (Map.Entrey<String, Peca> entrada : pecasSelecionadas.entrySet()){
+        for (Map.Entry<String, Peca> entrada : pecasSelecionadas.entrySet()){
             System.out.println(entrada.getKey() +":");
             System.out.println(entrada.getValue().getNome() + " R$ " + String.format("%.2f", entrada.getValue().getPreco()));
         }

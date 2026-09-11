@@ -1,4 +1,6 @@
 package source;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Categoria {
     private String nome;
@@ -27,16 +29,19 @@ public class Categoria {
         return null;
     }
 
-    @Override public String toString() {
-        public String toString() {
-            StringBuilder resultado = new StringBuilder();
-            resultado.append("\n----").append(nome).append("----\n");
-            for (int i = 0; i< getTotalPecas(); i++) {
-                resultado.append("[").append(i + 1).append("]");
-                resultado.append(pecas.get(i)).append("\n");
-            }
+    public int getTotalPecas() {
+        return pecas.size();
+    }
 
+    @Override
+    public String toString() {
+        StringBuilder resultado = new StringBuilder();
+        resultado.append("\n=== ").append(nome).append(" ===\n");
+        
+        for (int i = 0; i < getTotalPecas(); i++) {
+            resultado.append("[").append(i + 1).append("] ");
+            resultado.append(pecas.get(i)).append("\n");
+        }
             return resultado.toString();
         }
     }
-}
