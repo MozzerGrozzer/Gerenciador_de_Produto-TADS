@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ModeloCarro {
     private String nome;
-    private java.util.map<String, Peca> pecasExclusivas;
+    private java.util.Map<String, Peca> pecasExclusivas;
 
     public ModeloCarro(String nome) {
         this.nome = nome;
@@ -15,7 +15,7 @@ public class ModeloCarro {
     public String getNome() {
         return nome;
     }
-    public voit adicionarPecaExclusiva(String categoria, Peca peca){
+    public void adicionarPecaExclusiva(String categoria, Peca peca){
         pecasExclusivas.put(categoria, peca);
     }
 
