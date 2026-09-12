@@ -21,7 +21,7 @@ public class Peca {
     }
     @Override
     public String toString() {
-        return String.format("$s - R$ %.2f\n %s",nome,preco,descricao);
+        return String.format("%s - R$ %.2f\n %s",nome,preco,descricao);
     }
 }
 
