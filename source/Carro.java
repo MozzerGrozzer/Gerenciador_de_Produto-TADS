@@ -5,15 +5,26 @@ import java.util.Map;
 
 public class Carro {
     private String nome;
+    private String modelo;
     private Map<String, Peca> pecasSelecionadas;
 
-    public Carro(String nome) {
-        this.nome = nome;
+    public Carro(String modelo) {
+        this.modelo = modelo;
+        this.nome = modelo;
         this.pecasSelecionadas = new HashMap<>();
     }
     public String getNome() {
         return nome;
     }
+
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+
+    public String getModelo(){
+        return modelo;
+    }
+
     public void adicionarPecaSelecionada(String categoria, Peca peca) {
         pecasSelecionadas.put(categoria, peca);
     }
@@ -33,6 +44,7 @@ public class Carro {
     }
     public void exibirResumo() {
         System.out.println("Resumo do carro: " + nome);
+        System.out.println("Modelo do carro: " + modelo);
         
         if(pecasSelecionadas.isEmpty()) {
             System.out.println("Nenhuma peça selecionada.");
@@ -40,7 +52,9 @@ public class Carro {
         }
         for (Map.Entry<String, Peca> entrada : pecasSelecionadas.entrySet()){
             System.out.println(entrada.getKey() +":");
-            System.out.println(entrada.getValue().getNome() + " R$ " + String.format("%.2f", entrada.getValue().getPreco()));
+            Peca peca = entrada.getValue();
+            String exclusiva = peca.isExclusiva() ? " (Peça Exclsuiva)" : "";
+            System.out.println(entrada.getValue().getNome() +  exclusiva +" R$ " + String.format("%.2f", entrada.getValue().getPreco()));
         }
 
         System.out.println("\n" + "=".repeat(40));
