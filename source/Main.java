@@ -15,7 +15,7 @@ public class Main {
         inicializarPrograma();
     }
 
-    private static void inicializarPrograma() {
+    private static void inicializarPrograma() { // exibição da lista e seus atributos até o loop
         exibirBemVindo();
 
         criarCategorias();
@@ -35,8 +35,8 @@ public class Main {
 
     private static void criarCategorias() {
         Categoria motores = new Categoria("Motores");
-        motores.adicionarPeca(new Peca("Motor 1.0", 5000, "Primeiro motor"));
-        motores.adicionarPeca(new Peca("Motor 2.0", 8000, "Segundo motor"));
+        motores.adicionarPeca(new Peca("Motor 1.0", 5000, "Primeiro motor")); // para adicionar mais peças é
+        motores.adicionarPeca(new Peca("Motor 2.0", 8000, "Segundo motor")); // só seguir o padrão
         motores.adicionarPeca(new Peca("Motor 3.0", 25000, "Terceiro motor"));
         motores.adicionarPeca(new Peca("Motor 4.0", 5000, "Quarto motor"));
         categorias.add(motores);
@@ -71,7 +71,7 @@ public class Main {
         categorias.add(pintura);
     }
 
-    private static void criarModelos() {
+    private static void criarModelos() { // código das peças exclusivas, se caso por adicionar algo seguir padrão
         // ===== MODELO: PÁLIO =====
         ModeloCarro palio = new ModeloCarro("Pálio");
         palio.adicionarPecaExclusiva("MOTORES", new Peca("Motor Flex Premium Pálio", 7500, "Motor flex otimizado para Pálio", true));
@@ -136,7 +136,7 @@ public class Main {
         String modeloEscolhido = modelos_array[opcao -1];
         System.out.println("Modelo escolhido: " + modeloEscolhido);
 
-        return modeloEscolhido;
+        return modeloEscolhido; // ModeloCarro.java
     }
         
     private static void loopPrincipal() {

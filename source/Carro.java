@@ -11,7 +11,7 @@ public class Carro {
     public Carro(String modelo) {
         this.modelo = modelo;
         this.nome = modelo;
-        this.pecasSelecionadas = new HashMap<>();
+        this.pecasSelecionadas = new HashMap<>(); // faz o cálculo das peças e o resumo da compra.
     }
     public String getNome() {
         return nome;

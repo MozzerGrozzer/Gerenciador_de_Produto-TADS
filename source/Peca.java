@@ -6,7 +6,7 @@ public class Peca {
     private String descricao;
     private boolean exclusiva;
 
-    public Peca(String nome, double preco, String descricao) {
+    public Peca(String nome, double preco, String descricao) { // código para mostrar como as opções aparecem no menu
         this.nome = nome;
         this.preco = preco;
         this.descricao = descricao;
@@ -34,7 +34,7 @@ public class Peca {
 
     @Override
     public String toString() {
-        String marca = exclusiva ? "Estrela " : "";
+        String marca = exclusiva ? "Exclusivo: " : "";
         return String.format("%s%s - R$ %.2f\n   %s", marca, nome, preco, descricao);
     }
 }
