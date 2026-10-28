@@ -1,4 +1,4 @@
-package source;
+package source.scripts;
 
 import java.util.Scanner;
 import java.util.ArrayList;

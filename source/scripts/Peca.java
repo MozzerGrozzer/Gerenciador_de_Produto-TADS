@@ -1,4 +1,4 @@
-package source;
+package source.scripts;
 
 public class Peca {
     private String nome;

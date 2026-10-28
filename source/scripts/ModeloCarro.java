@@ -1,4 +1,4 @@
-package source;
+package source.scripts;
 
 import java.util.ArrayList;
 import java.util.List;
