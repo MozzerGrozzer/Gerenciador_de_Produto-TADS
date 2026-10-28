@@ -1,0 +1,17 @@
+INICIO
+
+DECLARE preco NUMERAL
+DECLARE nome, descricao TEXTO
+DECLARE op NUMERAL
+ESCREVA "Menu principal"
+ESCREVA " 1- Customizar seu carro "
+ESCREVA " 2 - Ver resumo do carro"
+ESCREVA " 3 - Fechar programa "
+SE op == 3
+    ENTÃO INICIO
+    FIM_ALGORITMO
+    FIM
+SE op == 1
+    ENTÃO INICIO
+    
+FIM_ALGORITMO
