@@ -1,17 +1,88 @@
-INICIO
+Var
+   modelo, categoria, opcao, i: inteiro
+   total, preco: real
+   nomePeca: caractere
+   escolhas: vetor[1..5] de inteiro
+   categorias: vetor[1..5] de caractere
+   modelos: vetor[1..4] de caractere
 
-DECLARE preco NUMERAL
-DECLARE nome, descricao TEXTO
-DECLARE op NUMERAL
-ESCREVA "Menu principal"
-ESCREVA " 1- Customizar seu carro "
-ESCREVA " 2 - Ver resumo do carro"
-ESCREVA " 3 - Fechar programa "
-SE op == 3
-    ENTÃO INICIO
-    FIM_ALGORITMO
-    FIM
-SE op == 1
-    ENTÃO INICIO
-    
-FIM_ALGORITMO
+Inicio
+
+   // Definir modelos e categorias
+   modelos[1] <- "Palio"
+   modelos[2] <- "Gol"
+   modelos[3] <- "Celta"
+   modelos[4] <- "Uno"
+
+   categorias[1] <- "Motores"
+   categorias[2] <- "Rodas"
+   categorias[3] <- "Interior"
+   categorias[4] <- "Sistemas"
+   categorias[5] <- "Pintura"
+
+   total <- 0
+
+   // Apresentar o sistema
+   escreva("Gerenciador de carros customizados")
+
+   // Escolher o modelo do carro
+   repita
+      escreva("Escolha um modelo:")
+      escreva("1 - Palio")
+      escreva("2 - Gol")
+      escreva("3 - Celta")
+      escreva("4 - Uno")
+      leia(modelo)
+
+      se (modelo < 1) ou (modelo > 4) entao
+         escreva("Opcao invalida. Tente novamente.")
+      fimse
+   ate (modelo >= 1) e (modelo <= 4)
+
+   escreva("Modelo escolhido: ", modelos[modelo])
+
+   // Escolher as pecas de cada categoria
+   para i de 1 ate 5 faca
+
+      escreva("Categoria: ", categorias[i])
+      escreva("Escolha uma peca disponivel.")
+      escreva("As opcoes incluem pecas padrao e uma exclusiva do modelo.")
+
+      // Apresentar as pecas e seus respectivos precos
+      // conforme a categoria e o modelo escolhido
+
+      repita
+         escreva("Digite o numero ou nome da peca desejada:")
+         leia(opcao)
+
+         // Verificar se a opcao corresponde a uma peca disponivel
+         se opcao for valida entao
+            escolhas[i] <- opcao
+         senao
+            escreva("Opcao invalida. Tente novamente.")
+         fimse
+
+      ate opcao for valida
+
+   fimpara
+
+   // Apresentar o resumo da customizacao
+   escreva("Resumo do carro")
+   escreva("Modelo: ", modelos[modelo])
+
+   para i de 1 ate 5 faca
+
+      // Identificar a peca escolhida na categoria
+      // Consultar o preco correspondente
+
+      escreva(categorias[i], ": ", nomePeca)
+      escreva("Preco: R$ ", preco)
+
+      total <- total + preco
+
+   fimpara
+
+   // Apresentar o valor final
+   escreva("Valor total: R$ ", total)
+
+Fimalgoritmo
